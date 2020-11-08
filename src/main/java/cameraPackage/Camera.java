@@ -57,12 +57,16 @@ public class Camera implements ICamera{
         int[] areaOfFace = new int[4];
         for (int i = 0; i < 21; i++) {
             for (int j = 0; j < 14; j++) {
+                //set Pos of first +
                 if(face[i][j] == '+' && !found){
                     areaOfFace[0] = Integer.valueOf(i);
                     areaOfFace[1] = Integer.valueOf(j)+1;
-                    areaOfFace[2] = Integer.valueOf(i)+9;
-                    areaOfFace[3] = Integer.valueOf(j)+10;
                     found = true;
+                }
+                //Set Pos of last +
+                if(face[i][j] == '+'){
+                    areaOfFace[2] = Integer.valueOf(i);
+                    areaOfFace[3] = Integer.valueOf(j);
                 }
             }
         }

@@ -2,9 +2,12 @@ import cameraPackage.Camera;
 import cameraPackage.MemoryCard;
 import cameraPackage.Camera.Builder;
 import cameraPackage.Picture;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
 
 
 public class TestCamera {
@@ -35,14 +38,20 @@ public class TestCamera {
     //Number 2
     @Test
     public void checkIfOnOffWorks() {
-        Assertions.assertEquals(false, camera.isOn());
+        Assertions.assertFalse(camera.isOn());
         camera.on();
-        Assertions.assertEquals(true, camera.isOn());
+        Assertions.assertTrue(camera.isOn());
         camera.off();
-        Assertions.assertEquals(false, camera.isOn());
+        Assertions.assertFalse(camera.isOn());
     }
 
     //Number 3
+//    @TestFactory
+//    Stream<DynamicTest> dynamicTestStream(){
+//        List<Integer> inputList1 = Arrays.asList();
+//        List<DynamicTest> dynamicTests = new ArrayList<>();
+//        return
+//    }
     @Test
     public void checkGetFaceArea() {
         int[] coordinates = {2, 2, 11, 11};
