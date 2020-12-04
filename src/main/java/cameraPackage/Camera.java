@@ -66,7 +66,7 @@ public class Camera implements ICamera{
                 //Set Pos of last +
                 if(face[i][j] == '+'){
                     areaOfFace[2] = Integer.valueOf(i);
-                    areaOfFace[3] = Integer.valueOf(j);
+                    areaOfFace[3] = Integer.valueOf(j-1);
                 }
             }
         }
